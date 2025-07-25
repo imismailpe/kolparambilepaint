@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   const [selectedColor, setSelectedColor] = useState("#d4d4d4");
   const [appliedColor, setAppliedColor] = useState("#d4d4d4");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const applyPaint = () => {
     setLoading(true);
     setAppliedColor(selectedColor);
@@ -42,7 +42,6 @@ function App() {
               )};multiple_true/sittingrom_fsnbht`}
               alt="Sample"
               width={320}
-              onLoad={() => setLoading(false)}
             />
           )}
         </div>
