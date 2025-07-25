@@ -9,8 +9,8 @@ function App() {
     setLoading(true);
     setAppliedColor(selectedColor);
     setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+      // setLoading(false);
+    }, 1000);
   };
   return (
     <>
@@ -32,18 +32,16 @@ function App() {
           className="image-wrapper"
           style={{ borderColor: appliedColor, border: "1px solid" }}
         >
-          {loading ? (
-            "Painting.."
-          ) : (
-            <img
-              src={`https://res.cloudinary.com/reviewdepo/image/upload/e_gen_recolor:prompt_walls;to-color_${appliedColor.replace(
-                "#",
-                ""
-              )};multiple_true/sittingrom_fsnbht`}
-              alt="Sample"
-              width={320}
-            />
-          )}
+          {loading ? "Painting.. Please wait" : null}
+          <img
+            src={`https://res.cloudinary.com/reviewdepo/image/upload/e_gen_recolor:prompt_walls;to-color_${appliedColor.replace(
+              "#",
+              ""
+            )};multiple_true/sittingrom_fsnbht`}
+            alt="Sample"
+            width={320}
+            onLoad={() => setLoading(false)}
+          />
         </div>
 
         <p className="color-code">Selected Color code: {appliedColor}</p>
