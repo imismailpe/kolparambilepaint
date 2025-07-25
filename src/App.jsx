@@ -32,7 +32,7 @@ function App() {
           className="image-wrapper"
           style={{ borderColor: appliedColor, border: "1px solid" }}
         >
-          {loading ? "Painting.. Please wait" : null}
+          {loading ? <div>Painting.. Please wait</div> : null}
           <img
             src={`https://res.cloudinary.com/reviewdepo/image/upload/e_gen_recolor:prompt_walls;to-color_${appliedColor.replace(
               "#",
