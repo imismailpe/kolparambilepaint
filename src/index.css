@@ -59,6 +59,7 @@ button:focus-visible {
   flex-direction: column;
   gap: 12px;
   justify-content: center;
+  min-width: 320px;
 }
 .color-picker{
   width: 100%;
